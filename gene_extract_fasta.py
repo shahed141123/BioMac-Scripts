@@ -114,3 +114,5 @@ for file in glob.glob(os.path.join(input_dir, '*.gff')):
                 print(f"Added sequence for gene: {gene} from file: {file}")
 
 print("Processing completed.")
+
+
