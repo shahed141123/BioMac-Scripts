@@ -1,11 +1,11 @@
-
+#copy_gcs_file.py
 import os
 import shutil
 
-source_directory = "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/GCS/error"
+source_directory = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/ncbi_dataset/data"
 
 # Define the destination directory where you want to copy and rename the files
-destination_directory = "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/gcs_files"
+destination_directory = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
 
 # Create the destination directory if it doesn't exist
 os.makedirs(destination_directory, exist_ok=True)
