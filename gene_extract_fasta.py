@@ -234,19 +234,19 @@ import re
 from Bio import SeqIO
 
 # Directories
-genome_dir = "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/gcs_files"
-output_dir = "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta"
-result_file = "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta/result.txt"
+genome_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
+output_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta"
+result_file = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta/result.txt"
 
 # Define the gene search terms (with variations) for each target gene
 target_genes = {
-    "dnaK": ["dnaK"],
-    "gyrA": ["gyrA", "gyrase subunit A"],
-    "gyrB": ["gyrB", "gyrase subunit B"],
+    # "dnaK": ["dnaK"],
+    # "gyrA": ["gyrA", "gyrase subunit A"],
+    "lacZ": ["lacZ", "Beta-galactosidase"],
+    "rpoN": ["rpoN", "RNA polymerase sigma-54 factor"],
     "ftsZ": ["ftsZ", "cell division protein FtsZ"],
-    "recA": ["recA", "DNA recombination/repair protein RecA"],
-    "rpoB": ["rpoB"],
-    "groEL": ["groEL"]
+    "feoB": ["feoB", "Ferrous iron transport protein B"],
+    "nadC": ["nadC", "Nicotinate-nucleotide pyrophosphorylase (carboxylating)"]
 }
 
 # Dictionary to store sequences for each gene
