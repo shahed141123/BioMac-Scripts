@@ -229,24 +229,111 @@
 # print(f"Results have been logged to {result_file}.")
 
 
+# import os
+# import re
+# from Bio import SeqIO
+
+# # Directories
+# genome_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
+# output_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta"
+# result_file = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta/result.txt"
+
+# # Define the gene search terms (with variations) for each target gene
+# target_genes = {
+#     # "dnaK": ["dnaK"],
+#     # "gyrA": ["gyrA", "gyrase subunit A"],
+#     "lacZ": ["lacZ", "Beta-galactosidase"],
+#     "rpoN": ["rpoN", "RNA polymerase sigma-54 factor", "RNA polymerase factor sigma-54"],
+#     "ftsZ": ["ftsZ", "cell division protein FtsZ"],
+#     "feoB": ["feoB", "Ferrous iron transport protein B", "ferrous iron transporter B"],
+#     "nadC": ["nadC", "Nicotinate-nucleotide pyrophosphorylase (carboxylating)"]
+# }
+
+# # Dictionary to store sequences for each gene
+# gene_sequences = {gene: [] for gene in target_genes}
+# missing_genes = {gene: [] for gene in target_genes}  # Track missing genes
+
+# # Function to parse .fna files and extract target gene sequences
+# def extract_gene_sequences(file_path):
+#     genome_id = os.path.basename(file_path).split(".")[0]  # Use filename as genome ID
+#     found_genes = set()  # Track genes found in this genome
+#     with open(file_path, "r") as handle:
+#         for record in SeqIO.parse(handle, "fasta"):
+#             description = record.description
+#             sequence = str(record.seq)
+
+#             # Extract the accession ID from the description
+#             prefix = "Accession ID : "
+#             accession_match = re.search(r'lcl\|([^\s]+)', description)
+#             accession_id = accession_match.group(1) if accession_match else "Unknown"
+
+#             # First perform case-sensitive exact match
+#             for gene in target_genes.keys():
+#                 exact_pattern = re.compile(r'\b' + re.escape(gene) + r'\b')
+#                 if exact_pattern.search(description):
+#                     if gene not in found_genes:
+#                         found_genes.add(gene)
+#                         gene_sequences[gene].append(f">{genome_id}\n{sequence}")
+#                     break  # Skip further searches for this genome if gene found
+
+#             # If the exact match was not found, check for variations
+#             for gene, patterns in target_genes.items():
+#                 if gene not in found_genes:  # Only check if the gene was not already found
+#                     for pattern in patterns:
+#                         if re.search(pattern, description, re.IGNORECASE):
+#                             found_genes.add(gene)
+#                             gene_sequences[gene].append(f">{genome_id}\n{sequence}")
+#                             break  # Move to the next gene after finding a match
+
+#     # Check for missing genes in this genome
+#     for gene in target_genes:
+#         if gene not in found_genes:
+#             missing_genes[gene].append(genome_id)
+
+# # Iterate through all .fna files in the genome directory
+# for filename in os.listdir(genome_dir):
+#     if filename.endswith(".fna"):
+#         extract_gene_sequences(os.path.join(genome_dir, filename))
+
+# # Write output FASTA files for each gene
+# for gene, sequences in gene_sequences.items():
+#     with open(os.path.join(output_dir, f"{gene}.fasta"), "w") as output_file:
+#         output_file.write("\n".join(sequences))
+
+# # Log missing genes to result.txt
+# with open(result_file, "w") as result_f:
+#     for gene, missing in missing_genes.items():
+#         if missing:
+#             result_f.write(f"Missing {gene} in genomes: {', '.join(missing)}\n")
+#         else:
+#             result_f.write(f"All genomes have {gene}.\n")
+
+# print("Gene sequences have been extracted and written to the output directory.")
+# print(f"Results have been logged to {result_file}.")
+
+
+
 import os
 import re
 from Bio import SeqIO
 
 # Directories
 genome_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
-output_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta"
-result_file = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta/result.txt"
+output_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2"
+result_file = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/result.txt"
 
 # Define the gene search terms (with variations) for each target gene
 target_genes = {
-    # "dnaK": ["dnaK"],
-    # "gyrA": ["gyrA", "gyrase subunit A"],
-    "lacZ": ["lacZ", "Beta-galactosidase"],
-    "rpoN": ["rpoN", "RNA polymerase sigma-54 factor"],
-    "ftsZ": ["ftsZ", "cell division protein FtsZ"],
-    "feoB": ["feoB", "Ferrous iron transport protein B"],
-    "nadC": ["nadC", "Nicotinate-nucleotide pyrophosphorylase (carboxylating)"]
+    "atpD": ["atpD", "ATP synthase beta chain", "ATP synthase subunit beta"],
+    "rpsE": ["rpsE", "ribosomal protein S5"],
+    "flgE": ["flgE", "Flagellar hook protein FlgE"],
+    "argD": ["argD", "Succinyldiaminopimelate aminotransferase","Acetylornithine aminotransferase"],
+    "ybaK": ["ybaK", "Cysteinyl-tRNA synthetase"],
+    "dnaJ": ["dnaJ"],
+    "ftsI": ["ftsI", "D-transpeptidase"],
+    "panB": ["panB", "3-methyl-2-oxobutanoate"],
+    "rpoD": ["rpoD"],
+    "dnaB": ["dnaB", "Replicative DNA helicase"]
 }
 
 # Dictionary to store sequences for each gene
@@ -255,17 +342,16 @@ missing_genes = {gene: [] for gene in target_genes}  # Track missing genes
 
 # Function to parse .fna files and extract target gene sequences
 def extract_gene_sequences(file_path):
-    genome_id = os.path.basename(file_path).split(".")[0]  # Use filename as genome ID
-    found_genes = set()  # Track genes found in this genome
+    strain_id = os.path.basename(file_path).split(".")[0]  # Use filename as strain ID
+    found_genes = set()  # Track genes found in this strain
     with open(file_path, "r") as handle:
         for record in SeqIO.parse(handle, "fasta"):
             description = record.description
             sequence = str(record.seq)
 
-            # Extract the accession ID from the description
-            prefix = "Accession ID : "
-            accession_match = re.search(r'lcl\|([^\s]+)', description)
-            accession_id = accession_match.group(1) if accession_match else "Unknown"
+            # Extract strain ID from the description if it exists
+            strain_match = re.search(r'Strain: (\S+)', description)
+            strain_id = strain_match.group(1) if strain_match else strain_id
 
             # First perform case-sensitive exact match
             for gene in target_genes.keys():
@@ -273,8 +359,8 @@ def extract_gene_sequences(file_path):
                 if exact_pattern.search(description):
                     if gene not in found_genes:
                         found_genes.add(gene)
-                        gene_sequences[gene].append(f">{genome_id}\n{sequence}")
-                    break  # Skip further searches for this genome if gene found
+                        gene_sequences[gene].append(f">{strain_id}\n{sequence}")
+                    break  # Skip further searches for this strain if gene found
 
             # If the exact match was not found, check for variations
             for gene, patterns in target_genes.items():
@@ -282,13 +368,13 @@ def extract_gene_sequences(file_path):
                     for pattern in patterns:
                         if re.search(pattern, description, re.IGNORECASE):
                             found_genes.add(gene)
-                            gene_sequences[gene].append(f">{genome_id}\n{sequence}")
+                            gene_sequences[gene].append(f">{strain_id}\n{sequence}")
                             break  # Move to the next gene after finding a match
 
-    # Check for missing genes in this genome
+    # Check for missing genes in this strain
     for gene in target_genes:
         if gene not in found_genes:
-            missing_genes[gene].append(genome_id)
+            missing_genes[gene].append(strain_id)
 
 # Iterate through all .fna files in the genome directory
 for filename in os.listdir(genome_dir):
@@ -304,9 +390,10 @@ for gene, sequences in gene_sequences.items():
 with open(result_file, "w") as result_f:
     for gene, missing in missing_genes.items():
         if missing:
-            result_f.write(f"Missing {gene} in genomes: {', '.join(missing)}\n")
+            result_f.write(f"Missing {gene} in strains: {', '.join(missing)}\n")
         else:
-            result_f.write(f"All genomes have {gene}.\n")
+            result_f.write(f"All strains have {gene}.\n")
 
 print("Gene sequences have been extracted and written to the output directory.")
 print(f"Results have been logged to {result_file}.")
+

@@ -49,8 +49,8 @@ import os
 import glob
 
 # Define paths
-input_directory = '/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta/aligned/snp/'
-output_directory = '/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta/aligned/snp/snp_table/'
+input_directory = '/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/aligned/'
+output_directory = '/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/snp/'
 
 # Ensure the output directory exists
 os.makedirs(output_directory, exist_ok=True)
