@@ -1,33 +1,34 @@
-GCA_000462975 V. anguillarum M3
-GCA_003031205 V. anguillarum 425
-GCA_021610025 V. anguillarum J382
-GCA_002310335 V. anguillarum VIB12
-GCA_002163795 V. anguillarum mvav6203
-GCA_002287545 V. anguillarum VIB43
-GCA_003595585 V. anguillarum MHK3
-GCA_002211985 V. anguillarum JLL237
-GCA_023612635 V. anguillarum NB10-GFP
-GCA_003399575 V. anguillarum J360
-GCA_002212025 V. anguillarum CNEVA NB11008
-GCA_002212005 V. anguillarum S3 4/9
-GCA_000786425 V. anguillarum NB10
-GCA_002291265 V. anguillarum ATCC-68554
-GCA_000217675 V. anguillarum 775
-GCA_002211505 V. anguillarum 87-9-116
+GCA_000217675.1  -  775 
+GCA_000462975.1  -  M3 
+GCA_000786425.1  -  NB10 
+GCA_002163795.1  -  mvav6203 
+GCA_002211505.1  -  87-9-116
+GCA_002211985.1  -  JLL237 
+GCA_002212005.1  -  S3 4/9
+GCA_002212025.1  -  CNEVA NB11008
+GCA_002287545.1  -  VIB43
+GCA_002291265.1  -  ATCC-68554
+GCA_002310335.1  -  VIB12 
+GCA_003031205.1  -  425 
+GCA_003399575.2  -  J360 
+GCA_003595585.1  -  MHK3 
+GCA_021610025.1  -  J382 
+GCA_023612635.1  -  NB10-GFP
 
-V. anguillarum M3
-V. anguillarum 425
-V. anguillarum J382
-V. anguillarum VIB12
-V. anguillarum mvav6203
-V. anguillarum VIB43
-V. anguillarum MHK3
-V. anguillarum JLL237
-V. anguillarum NB10-GFP
-V. anguillarum J360
-V. anguillarum CNEVA NB11008
-V. anguillarum S3 4/9
-V. anguillarum NB10
-V. anguillarum ATCC-68554
-V. anguillarum 775
-V. anguillarum 87-9-116
+
+GCA_000217675.1 -  775   -  
+GCA_000462975.1 -  M3   -  
+GCA_000786425.1 -  NB10   -  
+GCA_002163795.1 -  mvav6203   -  
+GCA_002211505.1 -  87-9-116  -  
+GCA_002211985.1 -  JLL237   -  
+GCA_002212005.1 -  S3 4/9  -  
+GCA_002212025.1 -  CNEVA NB11008  -  
+GCA_002287545.1 -  VIB43  -  
+GCA_002291265.1 -  ATCC-68554  -  
+GCA_002310335.1 -  VIB12   -  
+GCA_003031205.1 -  425   -  
+GCA_003399575.2 -  J360   -  
+GCA_003595585.1 -  MHK3   -  
+GCA_021610025.1 -  J382   -  
+GCA_023612635.1 -  NB10-GFP -      
