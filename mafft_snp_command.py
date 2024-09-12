@@ -15,3 +15,6 @@ for file in /Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/al
 
 for file in /Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/aligned/*.fasta; do python msa2snp.py "$file" > "${file%.fasta}_snp.txt"; done
 
+do mafft --auto "$file" > "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta/aligned/${file%.fasta}_aligned.fasta"; done
+
+mafft --auto hcp2.fasta > hcp2_aligned.fasta
