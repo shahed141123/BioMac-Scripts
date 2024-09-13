@@ -32,3 +32,108 @@ GCA_003399575.2 -  J360   -
 GCA_003595585.1 -  MHK3   -  
 GCA_021610025.1 -  J382   -  
 GCA_023612635.1 -  NB10-GFP -      
+
+
+GCF_000217675.1_ASM21767v1_genomic.fna  	NC_015633.1 NC_015637.1
+GCF_000462975.1_ASM46297v1_genomic.fna      NC_022223.1 NC_022224.1 NC_022225.1
+GCF_000786425.1_Vibrio_anguillarum_NB10_serovar_O1_genomic.fna  	NZ_LK021130.1 NZ_LK021129.1 NZ_LK021128.1	
+GCF_002163795.1_ASM216379v1_genomic.fna  	NZ_CP016095.1	
+GCF_002211505.1_ASM221150v1_genomic.fna  NZ_CP021980.1	NZ_CP021981.1
+GCF_002211985.1_ASM221198v1_genomic.fna  NZ_CP022101.1	NZ_CP022102.1	
+GCF_002212005.1_ASM221200v1_genomic.fna  NZ_CP022099.1	NZ_CP022100.1	
+GCF_002212025.1_ASM221202v1_genomic.fna  NZ_CP022103.1	NZ_CP022104.1		
+GCF_002287545.1_ASM228754v1_genomic.fna  NZ_CP023054.1	NZ_CP023055.1   NZ_CP023056.1	
+GCF_002291265.1_ASM229126v1_genomic.fna  NZ_CP023208.1	NZ_CP023209.1	NZ_CP023210.1		
+GCF_002310335.1_ASM231033v1_genomic.fna  NZ_CP023310.1	NZ_CP023311.1	NZ_CP023312.1	
+GCF_003031205.1_ASM303120v1_genomic.fna  NZ_CP020534.1	NZ_CP020533.1	NZ_CP020532.1	
+GCF_003399575.2_ASM339957v2_genomic.fna  NZ_CP034672.1	NZ_CP034673.1	NZ_CP034674.1
+GCF_003595585.1_ASM359558v1_genomic.fna  NZ_CP022468.1  NZ_CP022469.1
+GCF_021610025.1_ASM2161002v1_genomic.fna NZ_CP091185.1  NZ_CP091186.1  NZ_CP091187.1 NZ_CP091188.1
+GCF_023612635.1_ASM2361263v1_genomic.fna  
+
+
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_000217675.1_ASM21767v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_000462975.1_ASM46297v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_000786425.1_Vibrio_anguillarum_NB10_serovar_O1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002163795.1_ASM216379v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002211505.1_ASM221150v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002211985.1_ASM221198v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002212005.1_ASM221200v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002212025.1_ASM221202v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002287545.1_ASM228754v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002291265.1_ASM229126v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_002310335.1_ASM231033v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_003031205.1_ASM303120v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_003399575.2_ASM339957v2_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_003595585.1_ASM359558v1_genomic.fna.zip
+/Users/khandker_shahed/Documents/vibrio_anguillarum/gcf_files/GCF_021610025.1_ASM2161002v1_genomic.fna.zip
+
+users/gdacikudc/GCA_000217675.1_ASM21767v1_genomic.fna
+users/gdacikudc/GCA_000462975.1_ASM46297v1_genomic.fna
+users/gdacikudc/GCA_000786425.1_Vibrio_anguillarum_NB10_serovar_O1_genomic.fna
+users/gdacikudc/GCA_002163795.1_ASM216379v1_genomic.fna	
+users/gdacikudc/GCA_002211505.1_ASM221150v1_genomic.fna
+users/gdacikudc/GCA_002211985.1_ASM221198v1_genomic.fna	
+users/gdacikudc/GCA_002212005.1_ASM221200v1_genomic.fna	
+users/gdacikudc/GCA_002212025.1_ASM221202v1_genomic.fna		
+users/gdacikudc/GCA_002287545.1_ASM228754v1_genomic.fna	
+users/gdacikudc/GCA_002291265.1_ASM229126v1_genomic.fna
+users/gdacikudc/GCA_002310335.1_ASM231033v1_genomic.fna	
+users/gdacikudc/GCA_003031205.1_ASM303120v1_genomic.fna		
+users/gdacikudc/GCA_003399575.2_ASM339957v2_genomic.fna	
+users/gdacikudc/GCA_003595585.1_ASM359558v1_genomic.fna	
+users/gdacikudc/GCA_021610025.1_ASM2161002v1_genomic.fna
+users/gdacikudc/GCA_023612635.1_ASM2361263v1_genomic.fna
+
+NC_015633.1    NC_015637.1
+NC_022223.1    NC_022224.1    NC_022225.1
+NZ_LK021130.1  NZ_LK021129.1  NZ_LK021128.1	
+NZ_CP016095.1
+NZ_CP021980.1  NZ_CP021981.1
+NZ_CP022101.1  NZ_CP022102.1
+NZ_CP022099.1  NZ_CP022100.1
+NZ_CP022103.1  NZ_CP022104.1
+NZ_CP023054.1  NZ_CP023055.1  NZ_CP023056.1	
+NZ_CP023208.1  NZ_CP023209.1  NZ_CP023210.1		
+NZ_CP023310.1  NZ_CP023311.1  NZ_CP023312.1	
+NZ_CP020534.1  NZ_CP020533.1  NZ_CP020532.1	
+NZ_CP034672.1  NZ_CP034673.1  NZ_CP034674.1
+NZ_CP022468.1  NZ_CP022469.1
+NZ_CP091185.1  NZ_CP091186.1  NZ_CP091187.1 NZ_CP091188.1
+
+
+V. anguillarum 775 
+V. anguillarum M3 
+V. anguillarum NB10 
+V. anguillarum mvav6203 
+V. anguillarum 87-9-116
+V. anguillarum JLL237 
+V. anguillarum S3 4/9
+V. anguillarum CNEVA NB11008
+V. anguillarum VIB43
+V. anguillarum ATCC-68554
+V. anguillarum VIB12 
+V. anguillarum 425 
+V. anguillarum J360 
+V. anguillarum MHK3 
+V. anguillarum J382 
+V. anguillarum NB10-GFP
+
+
+
+GCF_000217675.1_ASM21767v1_genomic.fna  	NC_015633.1 NC_015637.1
+GCF_000462975.1_ASM46297v1_genomic.fna      NC_022223.1 NC_022224.1 NC_022225.1
+GCF_000786425.1_Vibrio_anguillarum_NB10_serovar_O1_genomic.fna  	NZ_LK021130.1 NZ_LK021129.1 NZ_LK021128.1	
+GCF_002163795.1_ASM216379v1_genomic.fna  	NZ_CP016095.1	
+GCF_002211505.1_ASM221150v1_genomic.fna  NZ_CP021980.1	NZ_CP021981.1
+GCF_002211985.1_ASM221198v1_genomic.fna  NZ_CP022101.1	NZ_CP022102.1	
+GCF_002212005.1_ASM221200v1_genomic.fna  NZ_CP022099.1	NZ_CP022100.1	
+GCF_002212025.1_ASM221202v1_genomic.fna  NZ_CP022103.1	NZ_CP022104.1		
+GCF_002287545.1_ASM228754v1_genomic.fna  NZ_CP023054.1	NZ_CP023055.1   NZ_CP023056.1	
+GCF_002291265.1_ASM229126v1_genomic.fna  NZ_CP023208.1	NZ_CP023209.1	NZ_CP023210.1		
+GCF_002310335.1_ASM231033v1_genomic.fna  NZ_CP023310.1	NZ_CP023311.1	NZ_CP023312.1	
+GCF_003031205.1_ASM303120v1_genomic.fna  NZ_CP020534.1	NZ_CP020533.1	NZ_CP020532.1	
+GCF_003399575.2_ASM339957v2_genomic.fna  NZ_CP034672.1	NZ_CP034673.1	NZ_CP034674.1
+GCF_003595585.1_ASM359558v1_genomic.fna  NZ_CP022468.1  NZ_CP022469.1
+GCF_021610025.1_ASM2161002v1_genomic.fna NZ_CP091185.1  NZ_CP091186.1  NZ_CP091187.1 NZ_CP091188.1
+GCF_023612635.1_ASM2361263v1_genomic.fna 
