@@ -18,3 +18,7 @@ for file in /Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/al
 do mafft --auto "$file" > "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta/aligned/${file%.fasta}_aligned.fasta"; done
 
 mafft --auto hcp2.fasta > hcp2_aligned.fasta
+
+pyani anim -i gca_files/ -o ani_results/
+pyani anim -i gca_files -o ani_results
+pyani -i gca_files/ -o pyani_output/ -m ANIm -g
