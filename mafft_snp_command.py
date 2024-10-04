@@ -26,3 +26,4 @@ mafft --auto tet34.fasta > tet34_aligned.fasta
 for file in /Users/khandker_shahed/Documents/vibrio_anguillarum/suppli_table/aligned/*.fasta; do python msa2snp.py "$file" > "${file%.fasta}_snp.txt"; done
 
 ppanggolin --fasta /Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/gca_files --output /Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/gca_files/output
+ppanggolin all --fasta /gca_files --output /pangolin_output
