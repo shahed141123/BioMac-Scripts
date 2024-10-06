@@ -47,11 +47,11 @@ def copy_files_with_extension(source_directory, destination_directory, file_exte
 
 if __name__ == "__main__":
     # Define your source and destination directories
-    source_directory = "/mnt/f/vibrio_anguillarum/prokka_output"
-    destination_directory = "/mnt/f/vibrio_anguillarum/gbk_files/"
+    source_directory = "/Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/ncbi_dataset/ncbi_dataset/data"
+    destination_directory = "/Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/gca_files/"
     
     # Define the file extension to be used
-    file_extension = ".gbk"  # Change this to any other extension as needed
+    file_extension = ".fna"  # Change this to any other extension as needed
     
     # Call the function with the specified parameters
     copy_files_with_extension(source_directory, destination_directory, file_extension)
