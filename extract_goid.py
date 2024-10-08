@@ -1,8 +1,12 @@
 import pandas as pd
+import matplotlib
+matplotlib.use('Agg')  # Use a non-GUI backend
 import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 # Define the file path
-file_path = '/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/eggnog_output2.emapper.annotations'
+# file_path = '/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/eggnog_output2.emapper.annotations'
+file_path = '/mnt/f/Research/marinum/go_kegg_analysis/eggnog_output.emapper.annotations'
 
 # Define column names based on the structure
 column_names = [
@@ -43,7 +47,7 @@ try:
         print(filtered_go_ids)
 
         # Save the GO ID counts to a CSV file
-        go_id_counts.to_csv('/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/go_id_counts.csv', header=True)
+        go_id_counts.to_csv('/mnt/f/Research/marinum/go_kegg_analysis/go_id_counts.csv', header=True)
         print("\nGO ID counts have been saved to 'go_id_counts.csv'.")
 
         # Plot the top 20 GO IDs

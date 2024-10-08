@@ -1,0 +1,21 @@
+name: biomac-env
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.9  # or 3.9 or 3.10, depending on your needs
+  - pandas
+  - gseapy
+  - matplotlib
+  - biopython
+  - scikit-learn
+  - numpy
+  - scipy
+  - seaborn
+  - openpyxl
+  - ipython
+  - jupyterlab
+  - pip  # add pip explicitly here
+  - pip:
+      - gseapy  # install the latest version of gseapy if not found on conda

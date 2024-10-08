@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from Bio.KEGG import REST
 
 # Define file paths
-file_path = '/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/eggnog_output2.emapper.annotations'
-go_output_file = '/path/to/save/go_id_counts.csv'
-kegg_output_file = '/path/to/save/kegg_enrichment_results.csv'
+file_path = '/mnt/f/Research/marinum/eggnog_output.emapper.annotations'
+go_output_file = '/mnt/f/Research/marinum/go_id_counts.csv'
+kegg_output_file = '/mnt/f/Research/marinum/kegg_enrichment_results.csv'
 
 # Define column names based on the structure
 column_names = [
