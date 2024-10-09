@@ -318,22 +318,25 @@ import re
 from Bio import SeqIO
 
 # Directories
-genome_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
-output_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2"
-result_file = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/result.txt"
+genome_dir = "/mnt/f/Research/marinum/gcs_files/"
+output_dir = "/mnt/f/Research/marinum/gcs_files/output_fasta"
+result_file = "/mnt/f/Research/marinum/gcs_files/output_fasta/result.txt"
+# genome_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
+# output_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2"
+# result_file = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/result.txt"
 
 # Define the gene search terms (with variations) for each target gene
 target_genes = {
-    "atpD": ["atpD", "ATP synthase beta chain", "ATP synthase subunit beta"],
-    "rpsE": ["rpsE", "ribosomal protein S5"],
-    "flgE": ["flgE", "Flagellar hook protein FlgE"],
-    "argD": ["argD", "Succinyldiaminopimelate aminotransferase","Acetylornithine aminotransferase"],
-    "ybaK": ["ybaK", "Cysteinyl-tRNA synthetase"],
-    "dnaJ": ["dnaJ"],
-    "ftsI": ["ftsI", "D-transpeptidase"],
-    "panB": ["panB", "3-methyl-2-oxobutanoate"],
-    "rpoD": ["rpoD"],
-    "dnaB": ["dnaB", "Replicative DNA helicase"]
+    "dnaA": ["dnaA"],
+    "gyrA": ["DNA gyrase subunit A", "gyrA"],
+    "gyrB": ["gyrB", "DNA topoisomerase (ATP-hydrolyzing) subunit B"],
+    "recF": ["recF"],
+    # "ybaK": ["ybaK", "Cysteinyl-tRNA synthetase"],
+    # "dnaJ": ["dnaJ"],
+    # "ftsI": ["ftsI", "D-transpeptidase"],
+    # "panB": ["panB", "3-methyl-2-oxobutanoate"],
+    # "rpoD": ["rpoD"],
+    # "dnaB": ["dnaB", "Replicative DNA helicase"]
 }
 
 # Dictionary to store sequences for each gene

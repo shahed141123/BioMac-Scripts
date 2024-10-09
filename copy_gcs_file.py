@@ -2,10 +2,12 @@
 import os
 import shutil
 
-source_directory = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/ncbi_dataset/ncbi_dataset/data"
+source_directory = "/mnt/f/Research/marinum/ncbi_dataset/data"
+# source_directory = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/ncbi_dataset/ncbi_dataset/data"
 
 # Define the destination directory where you want to copy and rename the files
-destination_directory = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
+destination_directory = "/mnt/f/Research/marinum/gcs_files/"
+# destination_directory = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
 
 # Create the destination directory if it doesn't exist
 os.makedirs(destination_directory, exist_ok=True)

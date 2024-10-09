@@ -1,17 +1,29 @@
+# # Install BiocManager if not already installed
+# if (!requireNamespace("BiocManager", quietly = TRUE)) {
+#   install.packages("BiocManager")
+# }
+
+# # Install the Bioconductor packages (AnnotationDbi, org.Mm.eg.db, and clusterProfiler)
+# BiocManager::install(c("AnnotationDbi", "org.Mm.eg.db", "clusterProfiler", "KEGGREST"))
+# # Install the CRAN packages (ggplot2 and scales)
+# install.packages(c("ggplot2", "scales"))
+# ggsave("/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/go_enrichment_dotplot.png", 
+
+
 # Load required libraries
 library(AnnotationDbi)
-# library(org.Hs.eg.db)
-library(org.Mm.eg.db)
-# library(org.Dr.eg.db)
+library(org.Hs.eg.db)
+# library(org.Mm.eg.db)
+library(org.Dr.eg.db)
 library(clusterProfiler)
 library(ggplot2)
 library(scales)
 library(KEGGREST) # For KEGG data access
 
 # Define file paths
-file_path <- '/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/eggnog_output2.emapper.annotations'
-go_output_file <- '/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/go_id_counts.csv'
-kegg_output_file <- '/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/kegg_enrichment_results.csv'
+file_path <- 'F:/Research/marinum/go_kegg_analysis/eggnog_output.emapper.annotations'
+go_output_file <- 'F:/Research/marinum/go_kegg_analysis/go_id_counts.csv'
+kegg_output_file <- 'F:/Research/marinum/go_kegg_analysis/kegg_enrichment_results.csv'
 
 # Load data
 annotation_df <- read.csv(file_path, sep='\t', header=FALSE, comment.char='#')
@@ -30,10 +42,10 @@ write.csv(go_id_counts, go_output_file)
 # Choose species and load corresponding organism database
 # species_db <- org.Hs.eg.db
 # species_code <- "hsa"
-# species_db <- org.Dr.eg.db
-# species_code <- "dre"
-species_db <- org.Mm.eg.db
-species_code <- "mmu"
+species_db <- org.Dr.eg.db
+species_code <- "dre"
+# species_db <- org.Mm.eg.db
+# species_code <- "mmu"
 
 # Retrieve genes associated with each GO term
 valid_go_ids <- intersect(go_ids, keys(species_db, keytype = "GO"))
@@ -76,10 +88,10 @@ ego_df$GeneRatio <- sapply(strsplit(as.character(ego_df$GeneRatio), "/"), functi
 })
 
 # Filter to display only the top 20 significant GO terms
-ego_df <- ego_df[order(ego_df$p.adjust), ][1:20, ]
+ego_df <- ego_df[order(ego_df$p.adjust), ][1:100, ]
 
 # Create the dot plot for GO enrichment with GeneRatio formatted as a decimal fraction
-ddotplot_go <- ggplot(ego_df, aes(x = GeneRatio, y = reorder(Description, GeneRatio), 
+dotplot_go <- ggplot(ego_df, aes(x = GeneRatio, y = reorder(Description, GeneRatio), 
                                   size = Count, color = p.adjust)) +
     geom_point(alpha = 0.8) +
     scale_color_gradient(low = "purple", high = "green", name = "p.adjust") +
@@ -97,9 +109,30 @@ ddotplot_go <- ggplot(ego_df, aes(x = GeneRatio, y = reorder(Description, GeneRa
           legend.text = element_text(size = 14))
 
 # Save the GO dot plot
-ggsave("/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/go_enrichment_dotplot.png", 
-       dotplot_go, width = 20, height = 15, dpi = 300)
+ggsave("F:/Research/marinum/go_kegg_analysis/go_enrichment_dotplot.png", dotplot_go, width = 20, height = 15, dpi = 300)
 
+
+
+species_db <- org.Hs.eg.db
+species_code <- "hsa"
+# species_db <- org.Dr.eg.db
+# species_code <- "dre"
+# species_db <- org.Mm.eg.db
+# species_code <- "mmu"
+
+# Retrieve genes associated with each GO term
+valid_go_ids <- intersect(go_ids, keys(species_db, keytype = "GO"))
+if (length(valid_go_ids) == 0) {
+    stop("No valid GO IDs found.")
+}
+
+genes_associated <- do.call(rbind, lapply(valid_go_ids, function(go_id) {
+    AnnotationDbi::select(species_db, keys = go_id, columns = c("SYMBOL", "ENTREZID"), keytype = "GO")
+}))
+gene_list <- unique(genes_associated$ENTREZID)
+
+# Define the background gene set (all Entrez IDs in the database)
+background_genes <- keys(species_db, keytype = "ENTREZID")
 # Perform KEGG pathway enrichment analysis
 kegg_results <- enrichKEGG(gene = gene_list,
                            organism = species_code,
@@ -127,7 +160,7 @@ kegg_df$GeneRatio <- sapply(strsplit(as.character(kegg_df$GeneRatio), "/"), func
 kegg_df_clean <- kegg_df[!is.na(kegg_df$GeneRatio), ]
 
 # Filter to display only the top 20 significant KEGG pathways
-kegg_df_clean <- kegg_df_clean[order(kegg_df_clean$p.adjust), ][1:20, ]
+kegg_df_clean <- kegg_df_clean[order(kegg_df_clean$p.adjust), ][1:100, ]
 
 # Create the dot plot for KEGG enrichment with GeneRatio formatted as a decimal fraction
 dotplot_kegg <- ggplot(kegg_df_clean, aes(x = GeneRatio, y = reorder(Description, GeneRatio), 
@@ -148,5 +181,5 @@ dotplot_kegg <- ggplot(kegg_df_clean, aes(x = GeneRatio, y = reorder(Description
           legend.text = element_text(size = 14))
 
 # Save the KEGG dot plot
-ggsave("/Users/khandker_shahed/Documents/Work with Onu Vai/Paper/Go_enrich80gene/kegg_enrichment_dotplot.png", 
+ggsave("F:/Research/marinum/go_kegg_analysis/kegg_enrichment_dotplot.png", 
        dotplot_kegg, width = 20, height = 15, dpi = 300)
