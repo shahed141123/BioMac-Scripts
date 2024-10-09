@@ -1,17 +1,17 @@
 for file in "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta/*.fasta"; 
 do mafft --auto "$file" > "/Users/khandker_shahed/Documents/Work with Onu Vai/Piscirickettsia salmonis/output_fasta/aligned/${file%.fasta}_aligned.fasta"; done
 
-for file in "/mnt/f/Research/marinum/gcs_files/output_fasta/*.fasta"; 
+for file in "/mnt/f/marinum/gcs_files/output_fasta/*.fasta"; 
 do mafft --auto "$file" > "/${file%.fasta}_aligned.fasta"; done
 
 
 for file in /Users/khandker_shahed/Documents/Work\ with\ Onu\ Vai/Piscirickettsia\ salmonis/output_fasta/*.fasta; do mafft --auto "$file" > /Users/khandker_shahed/Documents/Work\ with\ Onu\ Vai/Piscirickettsia\ salmonis/output_fasta/aligned/$(basename "${file%.fasta}_aligned.fasta"); done
-for file in /mnt/f/Research/marinum/gcs_files/output_fasta/*.fasta; do mafft --auto "$file" > /mnt/f/Research/marinum/gcs_files/output_fasta/aligned/$(basename "${file%.fasta}_aligned.fasta"); done
+for file in /mnt/f/marinum/gcs_files/output_fasta/*.fasta; do mafft --auto "$file" > /mnt/f/marinum/gcs_files/output_fasta/aligned/$(basename "${file%.fasta}_aligned.fasta"); done
 
 
 for file in /Users/khandker_shahed/Documents/Work\ with\ Onu\ Vai/Piscirickettsia\ salmonis/output_fasta/aligned/*.fasta; do python msa2snp/msa2snp.py "$file" > "/Users/khandker_shahed/Documents/Work\ with\ Onu\ Vai/Piscirickettsia\ salmonis/output_fasta/aligned/snp/${file%.fasta}_snp.txt"; done
 
-for file in /mnt/f/Research/marinum/gcs_files/output_fasta/aligned/*.fasta; do python msa2snp.py "$file" > "${file%.fasta}_snp.txt"; done
+for file in /mnt/f/marinum/gcs_files/output_fasta/aligned/*.fasta; do python msa2snp.py "$file" > "${file%.fasta}_snp.txt"; done
 
 
 for file in *.fasta; do python msa2snp/msa2snp.py "$file" > "snp/${file%.fasta}_snp.txt"; done
@@ -51,3 +51,12 @@ for file in /Users/khandker_shahed/Documents/vibrio_anguillarum/suppli_table/ali
 
 ppanggolin --fasta /Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/gca_files --output /Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/gca_files/output
 ppanggolin all --fasta /gca_files --output /pangolin_output
+
+roary -f /mnt/f/marinum/roary_output -e -n -v /mnt/f/marinum/prokka_generated_gff/*.gff
+
+
+python Roary_Heaps_Law.py /mnt/f/marinum/roary_output_1728452797/gene_presence_absence.Rtab 100
+
+python roary_plots.py /mnt/f/marinum/roary_output_1728452797/name_of_your_newick_tree_file.tre /mnt/f/marinum/roary_output_1728452797/gene_presence_absence.csv
+
+FastTree -nt /mnt/f/marinum/roary_output_1728452797/core_gene_alignment.aln > /mnt/f/marinum/roary_output_1728452797/core_gene_alignment.tree

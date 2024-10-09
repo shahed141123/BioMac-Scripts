@@ -49,8 +49,8 @@ import os
 import glob
 
 # Define paths
-input_directory = '/mnt/f/Research/marinum/gcs_files/output_fasta/aligned/'
-output_directory = '/mnt/f/Research/marinum/gcs_files/output_fasta/snp/'
+input_directory = '/mnt/f/marinum/gcs_files/output_fasta/aligned/'
+output_directory = '/mnt/f/marinum/gcs_files/output_fasta/snp/'
 # input_directory = '/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/aligned/'
 # output_directory = '/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/snp/'
 
