@@ -51,3 +51,8 @@ for file in /Users/khandker_shahed/Documents/vibrio_anguillarum/suppli_table/ali
 
 ppanggolin --fasta /Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/gca_files --output /Users/khandker_shahed/Documents/mycobacterium_marinum/genomes/gca_files/output
 ppanggolin all --fasta /gca_files --output /pangolin_output
+roary -f /mnt/f/Research/new_roary/gff_files/roary_output -e -n -v /*.gff
+
+conda create --name roary_env --yes python=3.9
+
+python Roary_Heaps_Law.py /mnt/f/Research/new_roary/roary_output/gene_presence_absence.Rtab 100

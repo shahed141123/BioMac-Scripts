@@ -1,8 +1,11 @@
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module='.*Qt.*')
 import numpy as np
 import random
 import sys
 import matplotlib.pyplot as plt  # Uncommented for plotting
 from scipy.optimize import curve_fit
+
 
 def heaps_law(x, k, alpha):
     return k * x**(alpha)
