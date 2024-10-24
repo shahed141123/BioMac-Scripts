@@ -318,19 +318,20 @@ import re
 from Bio import SeqIO
 
 # Directories
-genome_dir = "/mnt/f/Research/marinum/gcs_files/"
-output_dir = "/mnt/f/Research/marinum/gcs_files/output_fasta"
-result_file = "/mnt/f/Research/marinum/gcs_files/output_fasta/result.txt"
+genome_dir = "/mnt/f/marinum/gcs_files/"
+output_dir = "/mnt/f/marinum/gcs_files/output_fasta"
+result_file = "/mnt/f/marinum/gcs_files/output_fasta/result.txt"
 # genome_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/gcs_files/"
 # output_dir = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2"
 # result_file = "/Users/khandker_shahed/Documents/vibrio_anguillarum/output_fasta2/result.txt"
 
 # Define the gene search terms (with variations) for each target gene
 target_genes = {
-    "dnaA": ["dnaA"],
-    "gyrA": ["DNA gyrase subunit A", "gyrA"],
-    "gyrB": ["gyrB", "DNA topoisomerase (ATP-hydrolyzing) subunit B"],
-    "recF": ["recF"],
+
+    "dnaK": ["dnaK"],
+    # "ftsW": ["ftsW"],
+    # "trpA": ["trpA", "tryptophan synthase subunit alpha"],
+    # "hisD": ["hisD"],
     # "ybaK": ["ybaK", "Cysteinyl-tRNA synthetase"],
     # "dnaJ": ["dnaJ"],
     # "ftsI": ["ftsI", "D-transpeptidase"],
