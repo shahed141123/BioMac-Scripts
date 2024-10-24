@@ -3,6 +3,8 @@ warnings.filterwarnings("ignore", category=UserWarning, module='.*Qt.*')
 import numpy as np
 import random
 import sys
+import matplotlib
+matplotlib.use('Agg')  # Use Agg backend for non-GUI environments
 import matplotlib.pyplot as plt  # Uncommented for plotting
 from scipy.optimize import curve_fit
 
@@ -77,6 +79,6 @@ plt.gca().text(0.95, 0.05, text_str, transform=plt.gca().transAxes,
 
 # Highlight the pangenome status with color
 
-
+plt.savefig('Roary_Heaps_Law.png')
 plt.show()
 

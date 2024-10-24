@@ -86,9 +86,9 @@ create_dotplot <- function(df, title, output_file, color_low, color_high) {
 }
 
 # Load and clean data
-file_path <- 'F:/Research/marinum/eggnog_output.emapper.annotations'
-go_output_file <- 'F:/Research/marinum/go_id_counts.csv'
-kegg_output_file <- 'F:/Research/marinum/kegg_enrichment_results.csv'
+file_path <- 'F:/Research/new_roary/analysis/eggnog_output.emapper.annotations'
+go_output_file <- 'F:/Research/new_roary/analysis/go_id_counts.csv'
+kegg_output_file <- 'F:/Research/new_roary/analysis/kegg_enrichment_results.csv'
 
 # Check if the input file exists before reading
 if (!file.exists(file_path)) {
@@ -138,7 +138,7 @@ ego_df <- convert_GeneRatio(ego_df)
 ego_df <- ego_df[order(ego_df$p.adjust), ][1:20, ]
 
 # Create the GO dot plot
-go_dotplot_file <- "/F:/Research/marinum/go_enrichment_dotplot.png"
+go_dotplot_file <- "/F:/Research/new_roary/analysis/go_enrichment_dotplot.png"
 create_dotplot(ego_df, "GO Enrichment for Selected GO IDs", go_dotplot_file, "purple", "green")
 
 # Perform KEGG pathway enrichment analysis
@@ -155,7 +155,7 @@ kegg_df_clean <- kegg_df[!is.na(kegg_df$GeneRatio), ]
 kegg_df_clean <- kegg_df_clean[order(kegg_df_clean$p.adjust), ][1:20, ]
 
 # Create the KEGG dot plot
-kegg_dotplot_file <- "/F:/Research/marinum/kegg_enrichment_dotplot.png"
+kegg_dotplot_file <- "/F:/Research/new_roary/analysis/kegg_enrichment_dotplot.png"
 create_dotplot(kegg_df_clean, "KEGG Pathway Enrichment for Selected Genes", kegg_dotplot_file, "red", "blue")
 
 # Save the KEGG enrichment results to file
